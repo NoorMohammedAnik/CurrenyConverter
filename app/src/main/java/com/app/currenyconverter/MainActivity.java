@@ -39,6 +39,7 @@ public class MainActivity extends AppCompatActivity {
     String currencyFrom, currencyTo, standard_rate;
     List<String> country_list = new ArrayList<>();
 
+    //currency Api
     String api = "https://jsonvat.com/";
 
     @Override
@@ -63,7 +64,7 @@ public class MainActivity extends AppCompatActivity {
         }
 
 
-        //Select country to getRateCurrencyFrom from
+        //Select country to currency convert from
         msCurrencyFrom.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -86,6 +87,7 @@ public class MainActivity extends AppCompatActivity {
         });
 
 
+        //Select country to currency convert to
         msCurrencyTo.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -110,6 +112,7 @@ public class MainActivity extends AppCompatActivity {
         });
 
 
+        //click to change currency
         btnConvert.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -117,6 +120,7 @@ public class MainActivity extends AppCompatActivity {
                 String amount = etxtAmount.getText().toString();
 
 
+                //checking input field is valid or not
                 if (msCurrencyFrom.getText().toString().isEmpty()) {
                     msCurrencyFrom.setError("Select");
                 } else if (msCurrencyTo.getText().toString().isEmpty()) {
